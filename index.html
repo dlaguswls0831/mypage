@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>신입 웹퍼블리셔 임현진</title>
+    <link href="./images/png/logo.png" rel="shortcut icon" type="image/x-icon">
+    <link rel="stylesheet" href="./css/reset.css">
+    <link rel="stylesheet" href="./css/index.min.css">
+    <script src="./js/jquery-3.6.0.min.js"></script>
+    <script src="./js/jquery-ui.min.js"></script>
+    <script>
+        $(function(){
+            // 커서이벤트
+            var posX = 0, posY=0;
+            $(window).mousemove(function(a){
+                posX = a.clientX;
+                posY = a.clientY;
+                $('.curimg').css({
+                    top: posY,
+                    left: posX,
+                });
+            });
+
+            // 풀페이지이벤트
+            var loc=[];
+            var con=0;
+            var now=0;
+            var flag=true;
+            for(i=0; i<$('.wrap>div').length; i++){
+                loc[i]=$('.wrap>div').eq(i).offset().top;
+            }
+            $(window).on('mousewheel',function(eve){
+                console.log(eve.originalEvent.wheelDelta);
+                now= eve.originalEvent.wheelDelta;
+                
+                if(flag){
+                    if(now<0){
+                        con++;
+                        flag=false;
+                        if(con>=4) con=4;
+                    }else{
+                        con--;
+                        flag=false;
+                        if(con<=0) con=0;
+                    }
+                    $('html').animate({
+                        scrollTop:loc[con]
+                    },500,'easeInSine',function(){
+                        flag=true;
+                    });
+                }
+            })
+
+            // nav
+            $('.navIcon').click(function(){
+                $('nav').toggleClass('navon');
+            });
+        });
+    </script>
+</head>
+<body>
+    <!-- 해더,네비게이션 -->
+    <div class="hdrWrap">
+        <div class="curimg"></div>
+        <header>
+            <div class="navIcon">
+                <div class="image"></div>
+            </div>
+            <nav>
+                <h4>home</h4>
+                <h4>about</h4>
+                <h4>profile</h4>
+                <h4>portfolio</h4>
+                <h4>contact</h4>
+            </nav>
+        </header>
+    </div>
+    <!-- fullpage Wrap-->
+    <div class="wrap">
+        <div class="mainWrap">
+            <main>
+                <div class="imgTop">
+                    <div class="imgLeft">
+                        <div class="treeimg">
+                            <div class="leafimg"></div>
+                            <div class="image i1"></div>
+                            <div class="image i2"></div>
+                        </div>
+                    </div>
+                    <div class="imgRight">
+                        <div class="images">
+                            <div class="image i1"></div>
+                            <div class="image i2"></div>
+                            <div class="image i3"></div>
+                            <div class="image i4"></div>
+                            <div class="image i5"></div>
+                        </div>
+                        <div class="texts">
+                            <div class="texts">
+                                <h2>안녕하세요,<br>신입 웹퍼블리셔<br>임현진 입니다.</h2>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="imgBtm">
+                    <div class="imgLeft">
+                        <div class="images">
+                            <div class="bgImage">
+                                <div class="image i1"></div>
+                                <div class="image i2"></div>
+                                <div class="image i3"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="imgRight">
+                        <div class="images">
+                            <div class="bgImage">
+                                <div class="image i1"></div>
+                                <div class="image i2"></div>
+                                <div class="image i3"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </main>
+        </div>
+        <!-- cnt01,about -->
+        <div class="cntWrap">
+            <div class="content cnt01">
+                <header>
+                    <div class="hdrLeft">
+                        <div class="images">
+                            <div class="bgImage">
+                                <div class="image i1"></div>
+                                <div class="image i2"></div>
+                                <div class="image i3"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="hdrRight">
+                        <div class="images">
+                            <div class="bgImage">
+                                <div class="image i1"></div>
+                                <div class="image i2"></div>
+                                <div class="image i3"></div>
+                            </div>
+                        </div>
+                    </div>
+                </header>
+                <section>
+                    <div class="artTop">
+                        <article>
+                            <div class="image"></div>
+                            <div class="texts">
+                                <h5>통나무에 마우스를 올려보세요!</h5>
+                            </div>
+                        </article>
+                    </div>
+                    <div class="artBtm">
+                        <article>
+                            <div class="image i1"></div>
+                            <div class="texts">
+                                <h3>Lorem ipsum.</h3>
+                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo maiores a, perspiciatis reiciendis, ducimus officiis quibusdam optio, accusamus cumque nostrum eaque enim esse non repellat atque. Ad distinctio harum quasi?</p>
+                            </div>
+                        </article>
+                        <article>
+                            <div class="image i2"></div>
+                            <div class="texts">
+                                <h3>Lorem ipsum.</h3>
+                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo maiores a, perspiciatis reiciendis, ducimus officiis quibusdam optio, accusamus cumque nostrum eaque enim esse non repellat atque. Ad distinctio harum quasi?</p>
+                            </div>
+                        </article>
+                    </div>
+                </section>
+            </div>
+        </div>
+        <!-- cnt02,profile  -->
+        <div class="cntWrap">
+            <div class="content cnt02">
+                <section>
+                    <div class="artLeft">
+                        <article>
+                            <div class="hashtags">
+                                <div class="tag tagi1">
+                                    <div class="image"></div>
+                                    <h3>꼼꼼한</h3>
+                                </div>
+                                <div class="tag tagi2">
+                                    <div class="image"></div>
+                                    <h3>노력파</h3>
+                                </div>
+                                <div class="tag tagi3">
+                                    <div class="image"></div>
+                                    <h3>INFP</h3>
+                                </div>
+                                <div class="tag tagi4">
+                                    <div class="image"></div>
+                                    <h3>배려왕</h3>
+                                </div>
+                                <div class="tag tagi5">
+                                    <div class="image"></div>
+                                    <h3>소통UP</h3>
+                                </div>
+                            </div>
+                            <div class="profile">
+                                <div class="bgImage">
+                                    <div class="image i1"></div>
+                                    <div class="image i2"></div>
+                                </div>
+                            </div>
+                            <div class="btn">CLICK ↑</div>
+                        </article>
+                    </div>
+                    <div class="artRight">
+                        <div class="artTop">
+                            <article>
+                                <h3>introduce</h3>
+                                <div class="images">
+                                    <div class="image"></div>
+                                </div>
+                            </article>
+                        </div>
+                        <div class="artBtm">
+                            <h3>skill</h3>
+                            <div class="artGroup">
+                                <article>
+                                    <div class="image"></div>
+                                    <div class="skillImg i1"></div>
+                                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Et placeat expedita, necessitatibus harum numquam nostrum eius, dolorum aut quos tempore, magnam officia. Modi, voluptate mollitia? Rerum explicabo corporis voluptas eius!</p>
+                                </article>
+                                <article>
+                                    <div class="image"></div>
+                                    <div class="skillImg i2"></div>
+                                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Et placeat expedita, necessitatibus harum numquam nostrum eius, dolorum aut quos tempore, magnam officia. Modi, voluptate mollitia? Rerum explicabo corporis voluptas eius!</p>
+                                </article>
+                                <article>
+                                    <div class="image"></div>
+                                    <div class="skillImg i3"></div>
+                                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Et placeat expedita, necessitatibus harum numquam nostrum eius, dolorum aut quos tempore, magnam officia. Modi, voluptate mollitia? Rerum explicabo corporis voluptas eius!</p>
+                                </article>
+                                <article>
+                                    <div class="image"></div>
+                                    <div class="skillImg i4"></div>
+                                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Et placeat expedita, necessitatibus harum numquam nostrum eius, dolorum aut quos tempore, magnam officia. Modi, voluptate mollitia? Rerum explicabo corporis voluptas eius!</p>
+                                </article>
+                                <article>
+                                    <div class="image"></div>
+                                    <div class="skillImg i5"></div>
+                                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Et placeat expedita, necessitatibus harum numquam nostrum eius, dolorum aut quos tempore, magnam officia. Modi, voluptate mollitia? Rerum explicabo corporis voluptas eius!</p>
+                                </article>
+                                <article>
+                                    <div class="image"></div>
+                                    <div class="skillImg i6"></div>
+                                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Et placeat expedita, necessitatibus harum numquam nostrum eius, dolorum aut quos tempore, magnam officia. Modi, voluptate mollitia? Rerum explicabo corporis voluptas eius!</p>
+                                </article>
+                                <article>
+                                    <div class="image"></div>
+                                    <div class="skillImg i7"></div>
+                                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Et placeat expedita, necessitatibus harum numquam nostrum eius, dolorum aut quos tempore, magnam officia. Modi, voluptate mollitia? Rerum explicabo corporis voluptas eius!</p>
+                                </article>
+                            </div>
+                            <div class="btn">
+                                <div class="image"></div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </div>
+        <!-- cnt03,portpolio -->
+        <div class="cntWrap">
+            <div class="content cnt03">
+                <section>
+                    <div class="artTop">
+                        <div class="top">
+                            <article>
+                                <div class="image"></div>
+                            </article>
+                        </div>
+                        <div class="btm">
+                            <div class="images">
+                                <div class="image i1"></div>
+                                <div class="image i2"></div>
+                            </div>
+                            <div class="images">
+                                <div class="image i1"></div>
+                                <div class="image i2"></div>
+                            </div>
+                            <div class="images">
+                                <div class="image i1"></div>
+                                <div class="image i2"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="artBtm">
+                        <div class="top">
+                            <article>
+                                <div class="image"></div>
+                            </article>
+                        </div>
+                        <div class="btm">
+                            <div class="images">
+                                <div class="image i1"></div>
+                                <div class="image i2"></div>
+                            </div>
+                            <div class="images">
+                                <div class="image i1"></div>
+                                <div class="image i2"></div>
+                            </div>
+                            <div class="images">
+                                <div class="image i1"></div>
+                                <div class="image i2"></div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+            <div class="modalBox">
+                <div class="modals">
+                    <div class="modal modali1">
+                        <div class="image"></div>
+                    </div>
+                    <div class="modal modali2">
+                        <div class="image"></div>
+                    </div>
+                    <div class="modal modali3">
+                        <div class="image"></div>
+                    </div>
+                    <div class="modal modali4">
+                        <div class="image"></div>
+                    </div>
+                    <div class="modal modali5">
+                        <div class="image"></div>
+                    </div>
+                    <div class="modal modali6">
+                        <div class="image"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- ftr -->
+        <div class="ftrWrap">
+            <footer>
+                <div class="ftrTop">
+                    <div class="image"></div>
+                    <div class="icon"></div>
+                </div>
+                <div class="ftrBtm">
+                    <div class="ftrLeft">
+                        <div class="images">
+                            <div class="bgImage">
+                                <div class="image i1"></div>
+                                <div class="image i2"></div>
+                                <div class="image i3"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="ftrRight">
+                        <div class="images">
+                            <div class="bgImage">
+                                <div class="image i1"></div>
+                                <div class="image i2"></div>
+                                <div class="image i3"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </footer>
+        </div>
+    </div>
+</body>
+</html>

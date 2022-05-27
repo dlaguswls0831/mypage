@@ -1,0 +1,807 @@
+@font-face {
+    font-family: 'ge';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2201-2@1.0/GangwonEduHyeonokT_OTFMediumA.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+@mixin bgset {
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+@mixin flex {
+    display: flex;
+    justify-content: space-between;
+}
+@mixin grid {
+    width: 100%;
+    max-width: 1920px;
+    margin: 0 auto;
+}
+
+// min 반응형 변수
+$h20 : #{'min(0.5rem,20px)'};
+$h40 : #{'min(1rem,40px)'};
+$h60 : #{'min(1.5rem,60px)'};
+$h80 : #{'min(2rem,80px)'};
+$h90 : #{'min(2.25rem,90px)'};
+$h120 : #{'min(3rem,120px)'};
+$h200 : #{'min(5rem,200px)'};
+
+$h1 : #{'min(10em,100px)'};
+
+html{
+    font-size: 4vh;
+    body{
+        font-family: 'ge';
+        font-size: 1vh;
+        position: relative;
+        background-color: #dbc6b5;
+        overflow-y: hidden;
+    }
+}
+
+.image{
+    @include bgset;
+}
+
+@keyframes mov {
+    0%{
+        transform: rotate(0deg);
+    }
+    50%{
+        transform: rotate(20deg);
+    }
+    100%{
+        transform: rotate(0deg);
+    }
+}
+
+
+@keyframes gms {
+    0%{transform: rotate(0deg);}
+    10%{transform: rotate(45deg);}
+    20%{transform: rotate(-45deg);}
+    30%{transform: rotate(30deg);}
+    40%{transform: rotate(-30deg);}
+    50%{transform: rotate(10deg);}
+    60%{transform: rotate(-10deg);}
+    70%{transform: rotate(0deg);}
+    100%{transform: rotate(0deg);}
+}
+
+//cursor
+.curimg{
+    z-index: 999;
+    width: 150px;
+    height: 150px;
+    position: fixed;
+    top: 0; left: 0;
+    @include bgset;
+    background-image: url('../images/png/cur.png');
+    animation-name: mov;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+
+}
+
+// nav
+.hdrWrap{
+    position: fixed;
+    z-index: 998;
+    width: calc(100% / 20 * 2);
+    top: $h40; right: $h40;
+    header{
+        .navIcon{
+            width: calc(100% / 2 * 1);
+            min-width: 100px;
+            height: $h90;
+            background-color: #fff;
+            border-radius: 50%;
+            margin: 0 auto;
+            padding-top: 15px;
+            .image{
+                @include bgset;
+                background-size: contain;
+                height: $h60;
+                background-image: url('../images/png/acorn_type_B.png');
+                transform: rotate(20deg);
+                &:hover{
+                    animation: gms 1s forwards;
+                }
+            }
+        }
+        nav{
+            background-color: #fff;
+            border-radius: 40px;
+            margin-top: -10px;
+            position: relative;
+            height: 0vh;
+            overflow: hidden;
+            transition: height 0.8s;
+            h4{
+                font-size: #{'min(3em,30px)'};
+                text-align: center;
+                line-height: $h120;
+                text-transform: uppercase;
+            }
+            &.navon{
+                height: 60vh;
+            }
+        }
+    }
+}
+
+// home
+.mainWrap{
+    main{
+        @include grid;
+        position: relative;
+        height: 100vh;
+        .imgTop{
+            @include flex;
+            .imgLeft{
+                position: relative;
+                width: 50%;
+                .treeimg{
+                    position: relative;
+                    width: 40%;
+                    min-width: 360px;
+                    margin: 0 auto;
+                    height: #{'min(24rem,960px)'};
+                    @include bgset;
+                    background-size: contain;
+                    background-image: url('../images/png/main_tree.png');
+                    .image{
+                        width: 50%;
+                        height: #{'min(4rem,160px)'};
+                        position: absolute;
+                        top: $h120; left: $h80;
+                        &.i1{
+                            background-image: url('../images/png/profile_type_B.png');
+                            opacity: 0;
+                        }
+                        &.i2{
+                            background-image: url('../images/png/profile_type_A.png');
+                        }
+                    }
+                    .leafimg{
+                        position: absolute;
+                        top: #{'min(-2.8rem,-115px)'}; right: #{'min(1.2rem,-50px)'};
+                        width: calc(100% / 5 * 1.5);
+                        height: #{'min(10rem,400px)'};
+                        transform: rotate(230deg);
+                        @include bgset;
+                        background-image: url('../images/png/leaf_type_F.png');
+                        z-index: -1;
+                    }
+                }
+            }
+            .imgRight{
+                width: 50%;
+                position: relative;
+                .images{
+                    width: 100%;
+                    position: absolute;
+                    .image{
+                        z-index: 2;
+                        position: absolute;
+                        width: calc(100% / 11 * 2);
+                        height: #{'min(4.5rem,180px)'};
+                        &.i1{
+                            background-image: url('../images/png/leaf_type_E.png');
+                            top: 100px; left: -200px;
+                            transform: rotate(334deg);
+                        }
+                        &.i2{
+                            background-image: url('../images/png/leaf_type_B.png');
+                            top: 500px; left: 300px;
+                            transform: rotate(22deg);
+                        }
+                        &.i3{
+                            background-image: url('../images/png/leaf_A_type_2.png');
+                            top: 700px; left: -200px;
+                            transform: rotate(300deg);
+                        }
+                        &.i4{
+                            background-image: url('../images/png/acorn_type_B.png');
+                            height: $h90;
+                            transform: rotate(330deg);
+                            top: 420px; left:-150px;
+                            &:hover{
+                                animation: gms 1s forwards;
+                            }
+                        }
+                        &.i5{
+                            background-image: url('../images/png/bam.png');
+                            height: $h90;
+                            transform: rotate(24deg);
+                            top: 120px; left: 400px;
+                            &:hover{
+                                animation: gms 1s forwards;
+                            }
+                        }
+                    }
+                }
+                .texts{
+                    margin-top: #{'min(6rem,240px)'};
+                    h2{
+                        width: calc(100% / 11 * 5);
+                        font-size: #{'min(10em,100px)'};
+                        min-width: 400px;
+                        text-align: right;
+                        font-weight: 700;
+                    }
+                }
+            }
+        }
+        .imgBtm{
+            width: 100%;
+            @include flex;
+            position: absolute;
+            bottom: 0px;
+            .imgLeft{
+                width: 50%;
+                .images{
+                    width: calc(100% / 11 * 7);
+                    .bgImage{
+                        position: relative;
+                        transform: rotateY(180deg);
+                        height: #{'min(12rem,480px)'};
+                        @include bgset;
+                        background-size: cover;
+                        background-position: inherit;
+                        background-image: url('../images/png/bush_right.png');
+                        .image{
+                            position: absolute;
+                            width: 20%;
+                            height: #{'min(2.5rem,100px)'};
+                            &.i1{
+                                background-image: url('../images/png/acorn_type_A.png');
+                                left: #{'min(4.5rem,180px)'}; top: $h200;
+                                transform: rotate(330deg);
+                            }
+                            &.i2{
+                                background-image: url('../images/png/bam.png');
+                                bottom: $h60; right: #{'min(3.75rem,150px)'};
+                                transform: rotate(20deg);
+                            }
+                            &.i3{
+                                background-image: url('../images/png/acorn_type_c.png');
+                                right: $h90; top: $h120;
+                            }
+                            &:hover{
+                                animation: gms 1s forwards;
+                            }
+                        }
+                    }
+                }
+            }
+            .imgRight{
+                width: 50%;
+                .images{
+                    width: calc(100% / 11 * 7);
+                    margin-left: auto;
+                    .bgImage{
+                        position: relative;
+                        height: #{'min(12rem,480px)'};
+                        @include bgset;
+                        background-size: cover;
+                        background-position: inherit;
+                        background-image: url('../images/png/bush_right.png');
+                        .image{
+                            position: absolute;
+                            width: 20%;
+                            height: #{'min(2.5rem,100px)'};
+                            &.i1{
+                                background-image: url('../images/png/acorn_type_A.png');
+                                left: #{'min(4.5rem,180px)'}; top: $h200;
+                                transform: rotate(330deg);
+                            }
+                            &.i2{
+                                background-image: url('../images/png/bam.png');
+                                bottom: $h60; right: #{'min(3.75rem,150px)'};
+                                transform: rotate(20deg);
+                            }
+                            &.i3{
+                                background-image: url('../images/png/acorn_type_c.png');
+                                right: $h90; top: $h120;
+                            }
+                            &:hover{
+                                animation: gms 1s forwards;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+.cntWrap{
+    .content{
+        @include grid;
+        height: 100vh;
+        // about
+        &.cnt01{
+            header{
+                @include flex;
+                position: relative;
+                .hdrLeft{
+                    width: 50%;
+                    .images{
+                         width: calc(100% / 11 * 7);
+                         .bgImage{
+                            height: #{'min(12rem,480px)'};
+                            @include bgset;
+                            background-size: cover;
+                            background-position: inherit;
+                            background-image: url('../images/png/bush_right.png');
+                            transform: rotate(180deg);
+                        }
+                    }
+                }
+                .hdrRight{
+                    width: 50%;
+                    .images{
+                        width: calc(100% / 11 * 7);
+                        margin-left: auto;
+                        .bgImage{
+                            height: #{'min(12rem,480px)'};
+                            @include bgset;
+                            background-size: cover;
+                            background-position: inherit;
+                            background-image: url('../images/png/bush_right.png');
+                            transform: rotate(180deg) scaleX(-1);
+                         }
+                    }
+                }
+            }
+            section{
+                width: 80%;
+                margin: 0 auto;
+                position: relative;
+                .artTop{
+                    width: 20%;
+                    position: absolute;
+                    right: 20%; top: -35%;
+                    article{
+                        margin-left: auto;
+                        position: relative;
+                        .image{
+                            width: 100%;
+                            height: $h200;
+                            background-image: url('../images/png/leaf_type_G.png');
+                        }
+                        .texts{
+                            position: absolute;
+                            top: $h60;
+                            font-size: #{'min(3em,30px)'};
+                            background: rgba(255, 255, 255, 0.9);
+                            // font-weight: 700;
+                            line-height: $h80;
+                            padding: 0 20px;
+                        }
+                    }
+                }
+                .artBtm{
+                    width: 70%;
+                    margin: 0 auto;
+                    margin-top: #{'min(-2rem,-80px)'};
+                    article{
+                        width: 80%;
+                        position: relative;
+                        .image{
+                            width: 100%;
+                            height: 240px;
+                            background-image: url('../images/png/tree_type_A.png');
+                            transition: opacity 0.3s;
+                            &.i1{
+                                transform: rotateX(180deg);
+                            }
+                            &.i2{
+                                transform: scaleX(-1);
+                            }
+                        }
+                        &:nth-child(1){
+                            margin-left: auto;
+                        }
+                        &:nth-child(2){
+                            margin-top: $h40;
+                        }
+                        .texts{
+                            width: 70%;
+                            font-size: #{'min(2.4em,24px)'};
+                            position: absolute;
+                            bottom: $h80; right: $h80;
+                            display: none;
+                        }
+                    }
+                }
+            }
+        }
+        // profile
+        &.cnt02{
+            width: 80%;
+            section{
+                padding-top: $h200;
+                @include flex;
+                .artLeft{
+                    width: 60%;
+                    article{
+                        .hashtags{
+                            position: relative;
+                            @include flex;
+                            .tag{
+                                position: absolute;
+                                width: calc(100% / 5);
+                                .image{
+                                    width: 100%;
+                                    height: $h120;
+                                    background-image: url('../images/png/acorn_type_B.png');
+                                }
+                                h3{
+                                    position: absolute;
+                                    bottom: $h40; left: #{'min(1.25rem,50px)'};
+                                    width: 50%;
+                                    font-size: #{'min(3em,30px)'};
+                                    background: rgba(255,255,255,0.8);
+                                    text-align: center;
+                                    line-height: $h40;
+                                    font-weight: 700;
+                                    padding-top: 10px;
+                                }
+                                &.tagi1{
+                                    top: #{'min(4rem,160px)'}; left: #{'min(1.75rem,70px)'};
+                                    transform: rotate(30deg);
+                                }
+                                &.tagi2{
+                                    left: #{'min(4rem,160px)'};
+                                    transform: rotate(330deg);
+                                }
+                                &.tagi3{
+                                    left: 0; right: 0; margin: auto;
+                                }
+                                &.tagi4{
+                                    right: #{'min(4rem,160px)'};
+                                    transform: rotate(30deg);
+                                }
+                                &.tagi5{
+                                    top: #{'min(4rem,160px)'}; right: #{'min(1.75rem,70px)'};
+                                    transform: rotate(330deg);
+                                }
+                                
+                            }
+                        }
+                        .profile{
+                            width: 50%;
+                            margin: 0 auto;
+                            margin-top: $h120;
+                            .bgImage{
+                                position: relative;
+                                @include bgset;
+                                background-image: url('../images/png/profile_bgi.png');
+                                height: #{'min(10rem,400px)'};
+                                transform: rotate(330deg);
+                                .image{
+                                    position: absolute;
+                                    top: $h120; left: $h20;
+                                    width: 100%;
+                                    height: $h200;
+                                    transform: rotate(30deg);
+                                    &.i1{
+                                        background-image: url('../images/png/profile_type_C_01.png');
+                                    }
+                                    &.i2{
+                                        background-image: url('../images/png/profile_type_C_02.png');
+                                        opacity: 0;
+                                    }
+                                }
+                            }
+                        }
+                        .btn{
+                            width: 15%;
+                            font-size: #{'min(3em,30px)'};
+                            font-weight: 700;
+                            background-color: #fff;
+                            line-height: $h40;
+                            text-align: center;
+                            margin: 0 auto;
+                            margin-top: $h40;
+                            padding-top: 10px;
+                        }
+                    }
+                }
+                .artRight{
+                    width: 40%;
+                    .artTop{
+                        width: 60%;
+                        margin: 0 auto;
+                        article{
+                            h3{
+                                text-transform: uppercase;
+                                text-align: right;
+                                font-size: #{'min(5em,50px)'};
+                                line-height: $h80;
+                            }
+                           .images{
+                                position: relative;
+                                height: $h200;
+                                margin-top: $h40;
+                                @include bgset;
+                                background-image: url('../images/png/tree_type_C.png');
+                                .image{
+                                    position: absolute;
+                                    z-index: -1;
+                                    top: -50px; right: 20px;
+                                    transform: rotate(200deg);
+                                    width: 20%;
+                                    height: $h120;
+                                    background-image: url('../images/png/leaf_type_B.png');
+                                }
+                           }
+                        }
+                    }
+                    .artBtm{
+                        position: relative;
+                        width: 100%;
+                        overflow: hidden;
+                        height: #{'min(6rem,240px)'};
+                        @include bgset;
+                        background-image: url('../images/png/tree_type_B.png');
+                        h3{
+                            text-transform: uppercase;
+                            text-align: right;
+                            font-size: #{'min(5em,50px)'};
+                            line-height: $h80;
+                        }
+                        margin-top: $h40;
+                        .artGroup{
+                            width: 700%;
+                            @include flex;
+                            article{
+                                @include flex;
+                                position: relative;
+                                width: calc(50% / 7);
+                                margin-left: #{'min(4rem,160px)'};
+                                margin-top: $h20;
+                                background-color: rgba(255, 255, 255, 0.9);
+                                border-radius: 20px;
+                                padding: 10px;
+                                .image{
+                                    width: 20%;
+                                    height: $h80;
+                                    background-image: url('../images/png/bam.png');
+                                    opacity: 0.6;
+                                }
+                                .skillImg{
+                                    position: absolute;
+                                    left: -8%;
+                                    @include bgset;
+                                    width: 40%;
+                                    height: $h40;
+                                    margin-top: $h20;
+                                    @for $i from 1 through 7 {
+                                        &.i#{$i}{
+                                            background-image: url('../images/png/skill_img/skill_0#{$i}.png');
+                                        }
+                                    }
+                                }
+                                p{
+                                    width: 70%;
+                                    height: $h80;
+                                    overflow: hidden;
+                                    font-size: #{'min(2em,24px)'};
+                                }
+                            }
+                        }
+                        .btn{
+                            width: 10%;
+                            position: absolute;
+                            right: 0; top: #{'min(2.75rem,110px)'};
+                            .image{
+                                height: $h60;
+                                background-image: url('../images/png/btn.png');
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        // portpolio
+        &.cnt03{
+            width: 100%;
+            padding-top: $h40;
+            section{
+                .artTop{
+                    width: 80%;
+                    .top{
+                        article{
+                            .image{
+                                background-position: inherit;
+                                height: #{'min(4.25rem,170px)'};
+                                background-image: url('../images/png/branch.png');
+                            }
+                        }
+                    }
+                    .btm{
+                        @include flex;
+                        width: 60%;
+                        margin: 0 auto;
+                        .images{
+                            width: calc(100% / 3 - 20px);
+                            position: relative;
+                            .image{
+                                height: #{'min(6rem,240px)'};
+                                &.i1{
+                                    background-image: url('../images/png/acorn_type_A.png');
+                                    opacity: 0.8;
+                                }
+                                &.i2{
+                                    width: 50%;
+                                    position: absolute;
+                                    height: $h120;
+                                    top: 0; left: 0; right: 0; bottom: 0; margin: auto;
+                                    outline: 1px solid white;
+                                }
+                            }
+                            &:hover{
+                                animation: gms 1s forwards;
+                            }
+                            &:nth-child(2){
+                                .image{
+                                    transform: rotate(330deg);
+                                }
+                            }
+                        }
+                    }
+                }
+                .artBtm{
+                    width: 80%;
+                    margin-left: auto;
+                    margin-top: $h80;
+                    .top{
+                        article{
+                            .image{
+                                background-position: inherit;
+                                height: #{'min(4.25rem,170px)'};
+                                background-image: url('../images/png/branch.png');
+                            }
+                        }
+                    }
+                    .btm{
+                        width: 60%;
+                        margin: 0 auto;
+                        @include flex;
+                        .images{
+                            width: calc(100% / 3 - 20px);
+                            position: relative;
+                            .image{
+                                height: #{'min(6rem,240px)'};
+                                &.i1{
+                                    background-image: url('../images/png/acorn_type_A.png');
+                                    opacity: 0.8;
+                                }
+                                &.i2{
+                                    width: 50%;
+                                    position: absolute;
+                                    height: $h120;
+                                    top: 0; left: 0; right: 0; bottom: 0; margin: auto;
+                                    outline: 1px solid white;
+                                }
+                            }
+                            &:hover{
+                                animation: gms 1s forwards;
+                            }
+                            &:nth-child(2){
+                                .image{
+                                    transform: rotate(30deg);
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+.ftrWrap{
+    footer{
+        @include grid;
+        padding-top: $h200;
+        height: 100vh;
+        position: relative;
+        .ftrTop{
+            width: 80%;
+            margin: 0 auto;
+            .image{
+                width: 60%;
+                margin: 0 auto;
+                height: #{'min(11rem,440px)'};
+                background-image: url('../images/png/profile_type_A.png');
+            }
+        }
+        .ftrBtm{
+            width: 100%;
+            @include flex;
+            position: absolute;
+            bottom: 0;
+            .ftrLeft{
+                width: 50%;
+                .images{
+                    width: calc(100% / 11 * 7);
+                    .bgImage{
+                        position: relative;
+                        transform: rotateY(180deg);
+                        height: #{'min(12rem,480px)'};
+                        @include bgset;
+                        background-size: cover;
+                        background-position: inherit;
+                        background-image: url('../images/png/bush_right.png');
+                        .image{
+                            position: absolute;
+                            width: 20%;
+                            height: #{'min(2.5rem,100px)'};
+                            &.i1{
+                                background-image: url('../images/png/acorn_type_A.png');
+                                left: #{'min(4.5rem,180px)'}; top: $h200;
+                                transform: rotate(330deg);
+                            }
+                            &.i2{
+                                background-image: url('../images/png/bam.png');
+                                bottom: $h60; right: #{'min(3.75rem,150px)'};
+                                transform: rotate(20deg);
+                            }
+                            &.i3{
+                                background-image: url('../images/png/acorn_type_c.png');
+                                right: $h90; top: $h120;
+                            }
+                            &:hover{
+                                animation: gms 1s forwards;
+                            }
+                        }
+                    }
+                }
+            }
+            .ftrRight{
+                width: 50%;
+                .images{
+                    width: calc(100% / 11 * 7);
+                    margin-left: auto;
+                    .bgImage{
+                        position: relative;
+                        height: #{'min(12rem,480px)'};
+                        @include bgset;
+                        background-size: cover;
+                        background-position: inherit;
+                        background-image: url('../images/png/bush_right.png');
+                        .image{
+                            position: absolute;
+                            width: 20%;
+                            height: #{'min(2.5rem,100px)'};
+                            &.i1{
+                                background-image: url('../images/png/acorn_type_A.png');
+                                left: #{'min(4.5rem,180px)'}; top: $h200;
+                                transform: rotate(330deg);
+                            }
+                            &.i2{
+                                background-image: url('../images/png/bam.png');
+                                bottom: $h60; right: #{'min(3.75rem,150px)'};
+                                transform: rotate(20deg);
+                            }
+                            &.i3{
+                                background-image: url('../images/png/acorn_type_c.png');
+                                right: $h90; top: $h120;
+                            }
+                            &:hover{
+                                animation: gms 1s forwards;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
