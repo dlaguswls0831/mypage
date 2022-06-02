@@ -10,55 +10,7 @@
     <link rel="stylesheet" href="./css/index.min.css">
     <script src="./js/jquery-3.6.0.min.js"></script>
     <script src="./js/jquery-ui.min.js"></script>
-    <script>
-        $(function(){
-            // 커서이벤트
-            var posX = 0, posY=0;
-            $(window).mousemove(function(a){
-                posX = a.clientX;
-                posY = a.clientY;
-                $('.curimg').css({
-                    top: posY,
-                    left: posX,
-                });
-            });
-
-            // 풀페이지이벤트
-            var loc=[];
-            var con=0;
-            var now=0;
-            var flag=true;
-            for(i=0; i<$('.wrap>div').length; i++){
-                loc[i]=$('.wrap>div').eq(i).offset().top;
-            }
-            $(window).on('mousewheel',function(eve){
-                console.log(eve.originalEvent.wheelDelta);
-                now= eve.originalEvent.wheelDelta;
-                
-                if(flag){
-                    if(now<0){
-                        con++;
-                        flag=false;
-                        if(con>=4) con=4;
-                    }else{
-                        con--;
-                        flag=false;
-                        if(con<=0) con=0;
-                    }
-                    $('html').animate({
-                        scrollTop:loc[con]
-                    },500,'easeInSine',function(){
-                        flag=true;
-                    });
-                }
-            })
-
-            // nav
-            $('.navIcon').click(function(){
-                $('nav').toggleClass('navon');
-            });
-        });
-    </script>
+    <script src="./js/index.js"></script>
 </head>
 <body>
     <!-- 해더,네비게이션 -->
@@ -99,7 +51,7 @@
                         </div>
                         <div class="texts">
                             <div class="texts">
-                                <h2>안녕하세요,<br>신입 웹퍼블리셔<br>임현진 입니다.</h2>
+                                <h2><span>안녕하세요,</span><br><span>신입 웹퍼블리셔</span><br><span>임현진 입니다.</span></h2>
                             </div>
                         </div>
                     </div>

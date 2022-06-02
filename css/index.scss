@@ -45,6 +45,7 @@ html{
     @include bgset;
 }
 
+
 @keyframes mov {
     0%{
         transform: rotate(0deg);
@@ -56,7 +57,6 @@ html{
         transform: rotate(0deg);
     }
 }
-
 
 @keyframes gms {
     0%{transform: rotate(0deg);}
@@ -76,7 +76,6 @@ html{
     width: 150px;
     height: 150px;
     position: fixed;
-    top: 0; left: 0;
     @include bgset;
     background-image: url('../images/png/cur.png');
     animation-name: mov;
@@ -125,6 +124,12 @@ html{
                 text-align: center;
                 line-height: $h120;
                 text-transform: uppercase;
+                font-weight: 700;
+                transition: all 1s;
+                cursor: pointer;
+                &:hover{
+                    color: brown;
+                }
             }
             &.navon{
                 height: 60vh;
@@ -158,9 +163,11 @@ html{
                         height: #{'min(4rem,160px)'};
                         position: absolute;
                         top: $h120; left: $h80;
+                        transition: opacity 0.5s;
                         &.i1{
                             background-image: url('../images/png/profile_type_B.png');
                             opacity: 0;
+                            left: 24%;
                         }
                         &.i2{
                             background-image: url('../images/png/profile_type_A.png');
@@ -184,25 +191,34 @@ html{
                 .images{
                     width: 100%;
                     position: absolute;
+                    opacity: 0;
                     .image{
                         z-index: 2;
                         position: absolute;
                         width: calc(100% / 11 * 2);
-                        height: #{'min(4.5rem,180px)'};
+                        height: #{'min(4.5rem,180px)'}; 
+                        animation-iteration-count: infinite;
+                        animation-timing-function: linear;
                         &.i1{
                             background-image: url('../images/png/leaf_type_E.png');
                             top: 100px; left: -200px;
                             transform: rotate(334deg);
+                            animation-name: mov;
+                            animation-duration: 4s;
                         }
                         &.i2{
                             background-image: url('../images/png/leaf_type_B.png');
                             top: 500px; left: 300px;
                             transform: rotate(22deg);
+                            animation-name: mov;
+                            animation-duration: 5s;
                         }
                         &.i3{
                             background-image: url('../images/png/leaf_A_type_2.png');
                             top: 700px; left: -200px;
                             transform: rotate(300deg);
+                            animation-name: mov;
+                            animation-duration: 3s;
                         }
                         &.i4{
                             background-image: url('../images/png/acorn_type_B.png');
@@ -232,6 +248,10 @@ html{
                         min-width: 400px;
                         text-align: right;
                         font-weight: 700;
+                        span{
+                            opacity: 0;
+                            transition: all 1s;
+                        }
                     }
                 }
             }
@@ -339,6 +359,26 @@ html{
                             background-position: inherit;
                             background-image: url('../images/png/bush_right.png');
                             transform: rotate(180deg);
+                            .image{
+                                position: absolute;
+                                width: 20%;
+                                height: #{'min(2.5rem,100px)'};
+                                &.i1{
+                                    background-image: url('../images/png/acorn_type_A.png');
+                                    left: #{'min(4.5rem,180px)'}; top: $h200;
+                                    transform: rotate(150deg);
+                                }
+                                &.i2{
+                                    background-image: url('../images/png/bam.png');
+                                    bottom: $h60; right: #{'min(3.75rem,150px)'};
+                                    transform: rotate(210deg);
+                                }
+                                &.i3{
+                                    background-image: url('../images/png/acorn_type_c.png');
+                                    right: $h90; top: $h120;
+                                    transform: rotate(180deg);
+                                }
+                            }
                         }
                     }
                 }
@@ -354,6 +394,26 @@ html{
                             background-position: inherit;
                             background-image: url('../images/png/bush_right.png');
                             transform: rotate(180deg) scaleX(-1);
+                            .image{
+                                position: absolute;
+                                width: 20%;
+                                height: #{'min(2.5rem,100px)'};
+                                &.i1{
+                                    background-image: url('../images/png/acorn_type_A.png');
+                                    left: #{'min(4.5rem,180px)'}; top: $h200;
+                                    transform: rotate(150deg);
+                                }
+                                &.i2{
+                                    background-image: url('../images/png/bam.png');
+                                    bottom: $h60; right: #{'min(3.75rem,150px)'};
+                                    transform: rotate(210deg);
+                                }
+                                &.i3{
+                                    background-image: url('../images/png/acorn_type_c.png');
+                                    right: $h90; top: $h120;
+                                    transform: rotate(180deg);
+                                }
+                            }
                          }
                     }
                 }
@@ -392,9 +452,15 @@ html{
                     article{
                         width: 80%;
                         position: relative;
+                        &:hover>.image{
+                            opacity: 0.5;
+                        }
+                        &:hover>.texts{
+                            opacity: 1;
+                        }
                         .image{
                             width: 100%;
-                            height: 240px;
+                            height: #{'min(6rem,240px)'};
                             background-image: url('../images/png/tree_type_A.png');
                             transition: opacity 0.3s;
                             &.i1{
@@ -406,6 +472,9 @@ html{
                         }
                         &:nth-child(1){
                             margin-left: auto;
+                            .texts{
+                                bottom: $h40;
+                            }
                         }
                         &:nth-child(2){
                             margin-top: $h40;
@@ -415,7 +484,7 @@ html{
                             font-size: #{'min(2.4em,24px)'};
                             position: absolute;
                             bottom: $h80; right: $h80;
-                            display: none;
+                            opacity: 0;
                         }
                     }
                 }
@@ -436,6 +505,7 @@ html{
                             .tag{
                                 position: absolute;
                                 width: calc(100% / 5);
+                                opacity: 0;
                                 .image{
                                     width: 100%;
                                     height: $h120;
