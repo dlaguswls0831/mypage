@@ -259,6 +259,7 @@ html{
                 width: 50%;
                 .images{
                     width: calc(100% / 11 * 7);
+                    min-width: 600px;
                     .bgImage{
                         position: relative;
                         transform: rotateY(180deg);
@@ -297,6 +298,7 @@ html{
                 .images{
                     width: calc(100% / 11 * 7);
                     margin-left: auto;
+                    min-width: 600px;
                     .bgImage{
                         position: relative;
                         height: #{'min(12rem,480px)'};
@@ -346,6 +348,7 @@ html{
                     width: 50%;
                     .images{
                          width: calc(100% / 11 * 7);
+                         min-width: 600px;
                          .bgImage{
                             height: #{'min(12rem,480px)'};
                             @include bgset;
@@ -381,6 +384,7 @@ html{
                     .images{
                         width: calc(100% / 11 * 7);
                         margin-left: auto;
+                        min-width: 600px;
                         .bgImage{
                             height: #{'min(12rem,480px)'};
                             @include bgset;
@@ -416,10 +420,12 @@ html{
                 width: 80%;
                 margin: 0 auto;
                 position: relative;
+                min-width: 1200px;
                 .artTop{
                     width: 20%;
                     position: absolute;
                     right: 20%; top: -35%;
+                    min-width: 300px;
                     article{
                         margin-left: auto;
                         position: relative;
@@ -443,6 +449,7 @@ html{
                     width: 70%;
                     margin: 0 auto;
                     margin-top: #{'min(-2rem,-80px)'};
+                    min-width: 1070px;
                     article{
                         width: 80%;
                         position: relative;
@@ -492,6 +499,7 @@ html{
                 @include flex;
                 .artLeft{
                     width: 60%;
+                    min-width: 600px;
                     article{
                         .hashtags{
                             position: relative;
@@ -584,7 +592,7 @@ html{
                 .artRight{
                     width: 40%;
                     .artTop{
-                        width: 60%;
+                        width: 35%;
                         margin: 0 auto;
                         article{
                             h3{
@@ -594,7 +602,8 @@ html{
                                 line-height: $h80;
                                 font-weight: 700;
                             }
-                           .images{
+                            .images{
+                                min-width: 180px;
                                 position: relative;
                                 height: $h200;
                                 margin-top: $h40;
@@ -603,9 +612,9 @@ html{
                                 .image{
                                     position: absolute;
                                     z-index: -1;
-                                    top: -50px; right: 20px;
+                                    top: #{'min(-1.25rem,-50px)'}; right: #{'min(-1rem,-40px)'};
                                     transform: rotate(200deg);
-                                    width: 20%;
+                                    width: 30%;
                                     height: $h120;
                                     background-image: url('../images/png/leaf_type_B.png');
                                 }
@@ -614,7 +623,8 @@ html{
                     }
                     .artBtm{
                         position: relative;
-                        width: 80%;
+                        width: 80%;;
+                        min-width: 450px;
                         overflow: hidden;
                         height: #{'min(6rem,240px)'};
                         @include bgset;
@@ -846,6 +856,7 @@ html{
                 width: 50%;
                 .images{
                     width: calc(100% / 11 * 7);
+                    min-width: 600px;
                     .bgImage{
                         position: relative;
                         transform: rotateY(180deg);
@@ -884,6 +895,7 @@ html{
                 .images{
                     width: calc(100% / 11 * 7);
                     margin-left: auto;
+                    min-width: 600px;
                     .bgImage{
                         position: relative;
                         height: #{'min(12rem,480px)'};
