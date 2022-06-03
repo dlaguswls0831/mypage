@@ -41,21 +41,12 @@ html{
     }
 }
 
-.image{
-    @include bgset;
-}
 
 
 @keyframes mov {
-    0%{
-        transform: rotate(0deg);
-    }
-    50%{
-        transform: rotate(20deg);
-    }
-    100%{
-        transform: rotate(0deg);
-    }
+    0%{ transform: rotate(0deg);}
+    50%{transform: rotate(20deg);}
+    100%{transform: rotate(0deg);}
 }
 
 @keyframes gms {
@@ -69,6 +60,8 @@ html{
     70%{transform: rotate(0deg);}
     100%{transform: rotate(0deg);}
 }
+
+.image{@include bgset;}
 
 //cursor
 .curimg{
@@ -164,6 +157,7 @@ html{
                         position: absolute;
                         top: $h120; left: $h80;
                         transition: opacity 0.5s;
+                        cursor: pointer;
                         &.i1{
                             background-image: url('../images/png/profile_type_B.png');
                             opacity: 0;
@@ -506,6 +500,9 @@ html{
                                 position: absolute;
                                 width: calc(100% / 5);
                                 opacity: 0;
+                                &:hover{
+                                    animation: gms 1s forwards;
+                                }
                                 .image{
                                     width: 100%;
                                     height: $h120;
@@ -560,6 +557,7 @@ html{
                                     width: 100%;
                                     height: $h200;
                                     transform: rotate(30deg);
+                                    cursor: pointer;
                                     &.i1{
                                         background-image: url('../images/png/profile_type_C_01.png');
                                     }
@@ -594,6 +592,7 @@ html{
                                 text-align: right;
                                 font-size: #{'min(5em,50px)'};
                                 line-height: $h80;
+                                font-weight: 700;
                             }
                            .images{
                                 position: relative;
@@ -615,7 +614,7 @@ html{
                     }
                     .artBtm{
                         position: relative;
-                        width: 100%;
+                        width: 80%;
                         overflow: hidden;
                         height: #{'min(6rem,240px)'};
                         @include bgset;
@@ -625,6 +624,7 @@ html{
                             text-align: right;
                             font-size: #{'min(5em,50px)'};
                             line-height: $h80;
+                            font-weight: 700;
                         }
                         margin-top: $h40;
                         .artGroup{
@@ -633,8 +633,8 @@ html{
                             article{
                                 @include flex;
                                 position: relative;
-                                width: calc(50% / 7);
-                                margin-left: #{'min(4rem,160px)'};
+                                width: calc(70% / 7);
+                                margin-left: $h60;
                                 margin-top: $h20;
                                 background-color: rgba(255, 255, 255, 0.9);
                                 border-radius: 20px;
@@ -669,10 +669,11 @@ html{
                         .btn{
                             width: 10%;
                             position: absolute;
-                            right: 0; top: #{'min(2.75rem,110px)'};
+                            right: 15px; top: #{'min(3.25rem,130px)'};
                             .image{
-                                height: $h60;
+                                height: $h40;
                                 background-image: url('../images/png/btn.png');
+                                cursor: pointer;
                             }
                         }
                     }
@@ -699,25 +700,31 @@ html{
                         @include flex;
                         width: 60%;
                         margin: 0 auto;
-                        .images{
+                        article{
                             width: calc(100% / 3 - 20px);
-                            position: relative;
-                            .image{
-                                height: #{'min(6rem,240px)'};
-                                &.i1{
-                                    background-image: url('../images/png/acorn_type_A.png');
-                                    opacity: 0.8;
+                            margin: 0 10px;
+                            .images{
+                                width: 70%;
+                                margin: 0 auto;
+                                position: relative;
+                                cursor: pointer;
+                                .image{
+                                    height: #{'min(6rem,240px)'};
+                                    &.i1{
+                                        background-image: url('../images/png/acorn_type_B.png');
+                                        opacity: 0.8;
+                                    }
+                                    &.i2{
+                                        width: 50%;
+                                        position: absolute;
+                                        height: $h120;
+                                        top: 0; left: 0; right: 0; bottom: 0; margin: auto;
+                                        outline: 1px solid white;
+                                    }
                                 }
-                                &.i2{
-                                    width: 50%;
-                                    position: absolute;
-                                    height: $h120;
-                                    top: 0; left: 0; right: 0; bottom: 0; margin: auto;
-                                    outline: 1px solid white;
+                                &:hover{
+                                    animation: gms 1s forwards;
                                 }
-                            }
-                            &:hover{
-                                animation: gms 1s forwards;
                             }
                             &:nth-child(2){
                                 .image{
@@ -744,25 +751,30 @@ html{
                         width: 60%;
                         margin: 0 auto;
                         @include flex;
-                        .images{
+                        article{
                             width: calc(100% / 3 - 20px);
-                            position: relative;
-                            .image{
-                                height: #{'min(6rem,240px)'};
-                                &.i1{
-                                    background-image: url('../images/png/acorn_type_A.png');
-                                    opacity: 0.8;
+                            .images{
+                                width: 70%;
+                                margin: 0 auto;
+                                position: relative;
+                                cursor: pointer;
+                                .image{
+                                    height: #{'min(6rem,240px)'};
+                                    &.i1{
+                                        background-image: url('../images/png/acorn_type_B.png');
+                                        opacity: 0.8;
+                                    }
+                                    &.i2{
+                                        width: 50%;
+                                        position: absolute;
+                                        height: $h120;
+                                        top: 0; left: 0; right: 0; bottom: 0; margin: auto;
+                                        outline: 1px solid white;
+                                    }
                                 }
-                                &.i2{
-                                    width: 50%;
-                                    position: absolute;
-                                    height: $h120;
-                                    top: 0; left: 0; right: 0; bottom: 0; margin: auto;
-                                    outline: 1px solid white;
+                                &:hover{
+                                    animation: gms 1s forwards;
                                 }
-                            }
-                            &:hover{
-                                animation: gms 1s forwards;
                             }
                             &:nth-child(2){
                                 .image{
@@ -786,11 +798,43 @@ html{
         .ftrTop{
             width: 80%;
             margin: 0 auto;
+            position: relative;
+            overflow: hidden;
             .image{
                 width: 60%;
                 margin: 0 auto;
                 height: #{'min(11rem,440px)'};
                 background-image: url('../images/png/profile_type_A.png');
+            }
+            .icon{
+                z-index: 1;
+                position: absolute;
+                top: #{'min(-5.25rem,-210px)'}; 
+                transition: top 1s;
+                left: 0; right: 0; margin: auto;
+                width: 10%;
+                height: #{'min(4rem,160px)'};
+                margin: 0 auto;
+                @include bgset;
+                background-image: url('../images/png/acorn_type_B.png');
+                &.btmov{
+                    top: #{'min(6.5rem,250px)'}; 
+                    &:hover{
+                        animation: gms 1s forwards;
+                    }
+                }
+                .image{
+                    width: 50px;
+                    height: 50px;
+                    background-image: url('../images/png/skill_img/git.png');
+                    position: absolute;
+                    top: 20px; left: 0; right: 0; bottom: 0; margin : auto; 
+                    a{
+                        width: 100%;
+                        height: 100%;
+                        display: block;
+                    }
+                }
             }
         }
         .ftrBtm{

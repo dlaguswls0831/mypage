@@ -2,6 +2,7 @@ $(function(){
     var loc=[];
     var con=0;
     var now=0;
+    var num=0;
     var flag=true;
     var posX = 0, posY=0;
     
@@ -10,7 +11,7 @@ $(function(){
         scrollTop:0
     },1000);
     
-
+    
     // 풀페이지이벤트
     for(i=0; i<$('.wrap>div').length; i++){
         loc[i]=$('.wrap>div').eq(i).offset().top;
@@ -34,9 +35,33 @@ $(function(){
             },500,'easeInSine',function(){
                 flag=true;
             });
+
+            if(con==4){
+                $('footer .icon').animate({
+                    fontSize:'0'
+                },500,function(){
+                    $(this).addClass('btmov');
+                });
+            }else{
+                $('footer .icon').removeClass('btmov');
+            }
         }
     })
-
+    
+    // nav
+    $('.navIcon').click(function(){
+        $('nav').toggleClass('navon');
+    });
+    $('.hdrWrap h4').click(function(){
+        num=$(this).attr('data-num');
+        $('html').animate({scrollTop:loc[num]},1000,function(){
+            if(num==4){
+                $('footer .icon').addClass('btmov');
+            }else{
+                $('footer .icon').removeClass('btmov');
+            }
+        });
+    });
 
     // F5 이벤트
     // $(document).keydown(function(reload){
@@ -46,7 +71,7 @@ $(function(){
     // });
 
 
-    // 로딩
+    // 로딩시 이벤트
     $('main>.imgTop>.imgRight>.images').animate({
         opacity:'1'
     },1000,function(){
@@ -79,10 +104,6 @@ $(function(){
     });
 
 
-    // nav
-    $('.navIcon').click(function(){
-        $('nav').toggleClass('navon');
-    });
     
     // main
     var clickimg = true;
@@ -98,31 +119,76 @@ $(function(){
         }
     });
 
+    var tag = $('.tag');
+    var proclick = true;
+    var truetime = 300;
+    var flasetime = 200;
     // cnt02
     $('.cnt02 .profile .image.i2').click(function(){
-        $(this).animate({
-            opacity:'1'
-        },200,function(){
-            $('.tagi1').animate({
-                opacity :'1'
-        },400,function(){
-            $('.tagi2').animate({
-                opacity :'1'
-            },400,function(){
-                $('.tagi3').animate({
+        if(proclick){
+            $(this).animate({
+                opacity:'1'
+            },truetime,function(){
+                tag.eq(0).animate({
                     opacity :'1'
-                },400,function(){
-                    $('.tagi4').animate({
-                        opacity :'1' 
-                    },400,function(){
-                        $('.tagi5').animate({
-                            opacity :'1'
+            },truetime,function(){
+                tag.eq(1).animate({
+                    opacity :'1'
+                },truetime,function(){
+                    tag.eq(2).animate({
+                        opacity :'1'
+                    },truetime,function(){
+                        tag.eq(3).animate({
+                            opacity :'1' 
+                        },truetime,function(){
+                            tag.eq(4).animate({
+                                opacity :'1'
+                                });
+                            });
                         });
                     });
                 });
             });
-        });
+            proclick = false;
+        }else if(!proclick){
+            $(this).animate({
+                opacity:'0'
+            },flasetime,function(){
+                tag.eq(4).animate({
+                    opacity :'0'
+            },flasetime,function(){
+                tag.eq(3).animate({
+                    opacity :'0'
+                },flasetime,function(){
+                    tag.eq(2).animate({
+                        opacity :'0'
+                    },flasetime,function(){
+                        tag.eq(1).animate({
+                            opacity :'0' 
+                        },flasetime,function(){
+                            tag.eq(0).animate({
+                                opacity :'0'
+                                });
+                            });
+                        });
+                    });
+                });
+            });
+            proclick = true;
+        }
     });
+
+    
+    $('.cnt02 .artGroup').find('article:last').prependTo('.cnt02 .artGroup');
+    $('.cnt02 .artGroup').css('margin-left','-100%');
+    // skill slide
+    $('.cnt02 .artBtm .btn>.image').click(function(){
+        $('.cnt02 .artGroup').stop().animate({
+            marginLeft : 2*-100+'%'
+        },500,function(){
+            $('.cnt02 .artGroup').find('article:first').appendTo('.cnt02 .artGroup');
+            $('.cnt02 .artGroup').css('margin-left','-100%');
+        });
     });
 
 });
