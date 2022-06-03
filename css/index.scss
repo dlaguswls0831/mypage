@@ -694,9 +694,62 @@ html{
         &.cnt03{
             width: 100%;
             padding-top: $h40;
+            position: relative;
+            header{
+                width: 10%;
+                height: #{'min(6rem,240px)'};
+                position: absolute;
+                top: #{'min(2.5rem,100px)'}; right: 10%;
+                .image{
+                    position: relative;
+                    height: #{'min(6rem,240px)'};
+                    background-image: url('../images/png/leaf_type_D.png');
+                    transform: rotate(40deg);
+                    opacity: 0.7;
+                }
+                h2{
+                    position: absolute;
+                    top: 0; bottom: 0; left: 0; right: 0; margin: auto;
+                    font-size: #{'min(6em,60px)'};
+                    height: $h120;
+                    padding: 5px;
+                    text-shadow: 2px 2px 4px #000;
+                    color: #fff;
+                    text-transform: uppercase;
+                    text-align: center;
+                    font-weight: 700;
+                }
+            }
             section{
                 .artTop{
                     width: 80%;
+                    position: relative;
+                    .title{
+                        width: 15%;
+                        position: absolute;
+                        left: 4%; top: #{'min(2.5rem,100px)'}; 
+                        z-index: -1;
+                        .image{
+                            position: relative;
+                            background-image: url('../images/png/leaf_type_E.png');
+                            height: #{'min(6rem,240px)'};
+                            transform: rotate(30deg);
+                            opacity: 0.7;
+                        }
+                        h3{
+                            width: 80%;
+                            position: absolute;
+                            top: $h80; left: 0; right: 0; margin: auto;
+                            font-size: #{'min(5em,50px)'};
+                            text-transform:uppercase;
+                            font-weight: 700;
+                            text-align: center;
+                            border-radius: 20px;
+                            line-height: 40px;
+                            text-shadow: 2px 2px 4px #000;
+                            color: #fff;
+                        }
+                    }
                     .top{
                         article{
                             .image{
@@ -727,18 +780,41 @@ html{
                                     &.i2{
                                         width: 50%;
                                         position: absolute;
-                                        height: $h120;
-                                        top: 0; left: 0; right: 0; bottom: 0; margin: auto;
-                                        outline: 1px solid white;
+                                        height: $h80;
+                                        top: 10px; left: 0; right: 0; bottom: 0; margin: auto;
+                                        border-radius: 10px;
+                                        background-color: rgba(255, 255, 255, 0.6);
+                                        a{
+                                            width: 100%;
+                                            height: 100%;
+                                            display: block;
+                                        }
                                     }
                                 }
                                 &:hover{
                                     animation: gms 1s forwards;
                                 }
                             }
+                            &:nth-child(1){
+                                .image{
+                                    &.i2{
+                                        background-image: url('../images/pdf/pdf_logo01.png');
+                                    }
+                                }
+                            }
                             &:nth-child(2){
                                 .image{
                                     transform: rotate(330deg);
+                                    &.i2{
+                                        background-image: url('../images/pdf/pdf_logo02.png');
+                                    }
+                                }
+                            }
+                            &:nth-child(3){
+                                .image{
+                                    &.i2{
+                                        background-image: url('../images/pdf/pdf_logo03.png');
+                                    }
                                 }
                             }
                         }
@@ -748,6 +824,33 @@ html{
                     width: 80%;
                     margin-left: auto;
                     margin-top: $h80;
+                    position: relative;
+                    .title{
+                        width: 15%;
+                        position: absolute;
+                        left: 9%; top: #{'min(3.1rem,125px)'}; 
+                        z-index: -1;
+                        .image{
+                            position: relative;
+                            background-image: url('../images/png/leaf_type_E.png');
+                            height: #{'min(6rem,240px)'};
+                            transform: rotate(30deg) scaleX(-1);
+                            opacity: 0.7;
+                        }
+                        h3{
+                            width: 80%;
+                            position: absolute;
+                            top: $h90; left: 0; right: 0; margin: auto;
+                            font-size: #{'min(5em,50px)'};
+                            text-transform:uppercase;
+                            font-weight: 700;
+                            text-align: center;
+                            border-radius: 20px;
+                            line-height: 40px;
+                            text-shadow: 2px 2px 4px #000;
+                            color: #fff;
+                        }
+                    }
                     .top{
                         article{
                             .image{
@@ -780,6 +883,11 @@ html{
                                         height: $h120;
                                         top: 0; left: 0; right: 0; bottom: 0; margin: auto;
                                         outline: 1px solid white;
+                                        a{
+                                            width: 100%;
+                                            height: 100%;
+                                            display: block;
+                                        }
                                     }
                                 }
                                 &:hover{
