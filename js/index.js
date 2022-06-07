@@ -9,10 +9,10 @@ $(function(){
     var brow = navigator.userAgent;
       if(brow.match('ios | Android | Symbian | Apple | Samsung | LG | Blackberry | iPhone | Gallaxy')){
           /*조건이 참이면 실행하게됨*/
-          window.location.href = '../tab_1024.html'
+          window.location.href = '../html/tab_1024.html'
       }
       else if(brow.match('iPad')){
-          window.location.href = '../tab_1024.html'
+          window.location.href = '../html/tab_1024.html'
   }
   
     // 새로고침 리로드

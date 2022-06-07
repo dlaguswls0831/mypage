@@ -396,8 +396,21 @@ html{
         }
         &.cnt03{
             section{
-                .artTop{}
-                .artBtm{}
+                .artTop{
+                    .artimg{
+                        @include bgset;
+                        height: $h80;
+                        background-image: url('../images/png/branch.png');
+                    }
+                }
+                .artBtm{
+                    .artimg{
+                        @include bgset;
+                        height: $h80;
+                        background-image: url('../images/png/branch.png');
+                        transform: scale(-1);
+                    }
+                }
             }
         }
     }
