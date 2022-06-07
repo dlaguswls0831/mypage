@@ -5,7 +5,16 @@ $(function(){
     var num=0;
     var flag=true;
     var posX = 0, posY=0;
-    
+
+    var brow = navigator.userAgent;
+      if(brow.match('ios | Android | Symbian | Apple | Samsung | LG | Blackberry | iPhone | Gallaxy')){
+          /*조건이 참이면 실행하게됨*/
+          window.location.href = '../tab_1024.html'
+      }
+      else if(brow.match('iPad')){
+          window.location.href = '../tab_1024.html'
+  }
+  
     // 새로고침 리로드
     $('html').animate({
         scrollTop:0
