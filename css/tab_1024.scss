@@ -56,7 +56,8 @@ html{
             margin: 0 auto;
             background-color: #fff;
             border-radius: 50%;
-            padding: 10px;
+            padding: 5px;
+            height: #{'min(3.5rem,140px)'};
             .image{
                 width: 50%;
                 margin: 0 auto;
@@ -71,7 +72,7 @@ html{
             border-radius: 40px;
             margin-top: -10px;
             position: relative;
-            height: 0vh;
+            height: 0;
             overflow: hidden;
             transition: height 0.8s;
             h4{
@@ -87,7 +88,7 @@ html{
                 }
             }
             &.navon{
-                height: 33vh;
+                height: #{'min(11rem,440px)'};
             }
         }
     }
@@ -581,6 +582,7 @@ html{
 
 .ftrWrap{
     margin-top: $h160;
+    height: 10vh;
     footer{
         @include grid;
         .ftrTop{
@@ -633,9 +635,10 @@ html{
             @include flex;
             margin-top: #{'min(-2rem,-80px)'};
             .ftrLeft{
-                width: 44%;
+                width: 50%;
                 .ovrGrid{
                     @include bgset;
+                    background-size: cover;
                     width: calc((100vw - 700px) / 2 + 100%);
                     min-width: calc((100vw - 90vw) / 2 + 100%);
                     margin-left: #{'min(calc((100vw - 700px) / -2),calc((100vw - 90vw) / -2))'};
@@ -644,9 +647,10 @@ html{
                 }
             }
             .ftrRight{
-                width: 44%;
+                width: 50%;
                 .ovrGrid{
                     @include bgset;
+                    background-size: cover;
                     transform: scaleX(-1);
                     width: calc((100vw - 700px) / 2 + 100%);
                     min-width: calc((100vw - 90vw) / 2 + 100%);
