@@ -19,7 +19,10 @@ $(function(){
     $('html').animate({
         scrollTop:0
     },1000);
-    
+    $( window ).resize(function(){
+        location.reload();
+    });
+        
     
     // 풀페이지이벤트
     for(i=0; i<$('.wrap>div').length; i++){
