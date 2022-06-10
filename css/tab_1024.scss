@@ -31,6 +31,11 @@ $h200 : #{'min(5rem,200px)'};
     max-width: 700px;
     margin: 0 auto;
 }
+@mixin mob {
+    @media (max-width: 420px) and (min-width: 0px){
+        @content;
+    }
+}
 
 html{
     font-size: 5.1vw;
@@ -45,6 +50,9 @@ html{
 
 // hdr,네비게이션
 .hdrWrap{
+    @include mob{
+        width: 25%;
+    }
     width: 20%;
     position: fixed;
     z-index: 998;
@@ -67,6 +75,9 @@ html{
             }
         }
         nav{
+            @include mob{
+                border-radius: 20px;
+            }
             width: 100%;
             background-color: #fff;
             border-radius: 40px;
@@ -165,6 +176,9 @@ html{
             z-index: 2;
             position: relative;
             @include flex;
+            @include mob{
+                margin-top: #{'min(-6rem,-240px)'};
+            }
             margin-top: #{'min(-8rem,-320px)'};
             .btmLeft{
                 width: 44%;
@@ -225,6 +239,12 @@ html{
                 article{
                     width: 100%;
                     position: relative;
+                    &:hover>.image{
+                        opacity: 0.3;
+                    }
+                    &:hover>.texts{
+                        opacity: 1;
+                    }
                     .image{
                         position: relative;
                         height: $h200;
@@ -248,12 +268,17 @@ html{
                         }
                     }
                     .texts{
+                        @include mob{
+                            width: 75%;
+                        }
                         position: absolute;
                         top: 0; left: 0; right: 0; bottom: 0; margin: auto;
                         width: 60%;
                         margin: 0 auto;
+                        opacity: 0;
                         h3{
                             font-size: #{'min(3em,30px)'};
+                            font-weight: 700;
                         }
                         p{
                             font-size: #{'min(1.8em,18px)'};
@@ -338,6 +363,9 @@ html{
                             }
                         }
                         .profile{
+                            @include mob{
+                                margin-top: $h90;
+                            }
                             width: 50%;
                             margin: 0 auto;
                             margin-top: $h80;
@@ -403,6 +431,9 @@ html{
                         top: $h40; left: 0; right: 0; bottom: 0; margin: auto;
                         height: $h80;
                         .article{
+                            @include mob{
+                                width: calc(100% / 3 - 20px);
+                            }
                             width: calc(100% / 7 - 20px);
                             position: relative;
                             height: $h80;

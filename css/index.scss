@@ -451,17 +451,17 @@ html{
                     margin-top: #{'min(-2rem,-80px)'};
                     min-width: 1070px;
                     article{
-                        width: 80%;
+                        width: 85%;
                         position: relative;
                         &:hover>.image{
-                            opacity: 0.5;
+                            opacity: 0.3;
                         }
                         &:hover>.texts{
                             opacity: 1;
                         }
                         .image{
                             width: 100%;
-                            height: #{'min(6rem,240px)'};
+                            height: #{'min(7rem,280px)'};
                             background-image: url('../images/png/tree_type_A.png');
                             transition: opacity 0.3s;
                             &.i1{
@@ -474,18 +474,19 @@ html{
                         &:nth-child(1){
                             margin-left: auto;
                             .texts{
-                                bottom: $h40;
+                                bottom: $h60;
                             }
                         }
                         &:nth-child(2){
                             margin-top: $h40;
                         }
                         .texts{
-                            width: 70%;
+                            width: 80%;
                             font-size: #{'min(2.4em,24px)'};
                             position: absolute;
-                            bottom: $h80; right: $h80;
+                            bottom: $h90; right: $h80;
                             opacity: 0;
+                            font-weight: 700;
                         }
                     }
                 }
@@ -609,6 +610,11 @@ html{
                                 margin-top: $h40;
                                 @include bgset;
                                 background-image: url('../images/png/tree_type_C.png');
+                                a{
+                                    width: 100%;
+                                    height: 100%;
+                                    display: block;
+                                }
                                 .image{
                                     position: absolute;
                                     z-index: -1;
@@ -673,6 +679,7 @@ html{
                                     height: $h80;
                                     overflow: hidden;
                                     font-size: #{'min(2em,24px)'};
+                                    font-weight: 700;
                                 }
                             }
                         }
@@ -866,11 +873,36 @@ html{
                         @include flex;
                         article{
                             width: calc(100% / 3 - 20px);
+                            &:nth-child(2){
+                               .images{
+                                h3{
+                                    height: $h80;
+                                    padding-top: $h20;
+                                }
+                               }
+                            }
+                            &:nth-child(3){
+                               .images{
+                                h3{
+                                    height: $h80;
+                                    padding-top: $h20;
+                                }
+                               }
+                            }
                             .images{
                                 width: 70%;
                                 margin: 0 auto;
                                 position: relative;
                                 cursor: pointer;
+                                h3{
+                                    z-index: 10;
+                                    font-size: #{'min(5em,50px)'};
+                                    text-align: center;
+                                    background-color: rgba(255, 255, 255, 0.8);
+                                    position: absolute;
+                                    top: 0; left: 0; right: 0; bottom: 0; margin: auto;
+                                    height: $h120;
+                                }
                                 .image{
                                     height: #{'min(6rem,240px)'};
                                     &.i1{
@@ -882,7 +914,6 @@ html{
                                         position: absolute;
                                         height: $h120;
                                         top: 0; left: 0; right: 0; bottom: 0; margin: auto;
-                                        outline: 1px solid white;
                                         a{
                                             width: 100%;
                                             height: 100%;
