@@ -76,4 +76,14 @@ $(function(){
         }
     });
 
+    var loc=[];
+    var num=0;
+    for(i=0; i<$('body>div').length; i++){
+        loc[i]=$('body>div').eq(i).offset().top;
+    }
+    $('.hdrWrap h4').click(function(){
+        num=$(this).attr('data-num');
+        $('html').animate({scrollTop:loc[num]},1000);
+    });
+
 });
