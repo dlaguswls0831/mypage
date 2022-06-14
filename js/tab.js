@@ -1,7 +1,16 @@
 $(function(){
     // nav
+    var num=0;
+    var loc=[];
+    for(i=0; i<$('.wrap>div').length; i++){
+        loc[i]=$('.wrap>div').eq(i).offset().top;
+    }
     $('.hdrWrap header .icon').click(function(){
         $('nav').toggleClass('navon');
+    });
+    $('.hdrWrap h4').click(function(){
+        num=$(this).attr('data-num');
+        $('html').animate({scrollTop:loc[num]},1000);
     });
 
     var clickimg = true;
@@ -74,16 +83,6 @@ $(function(){
             });
             proclick = true;
         }
-    });
-
-    var loc=[];
-    var num=0;
-    for(i=0; i<$('body>div').length; i++){
-        loc[i]=$('body>div').eq(i).offset().top;
-    }
-    $('.hdrWrap h4').click(function(){
-        num=$(this).attr('data-num');
-        $('html').animate({scrollTop:loc[num]},1000);
     });
 
 });

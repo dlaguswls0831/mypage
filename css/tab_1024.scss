@@ -116,7 +116,7 @@ html{
                 .treeimg{
                     @include bgset;
                     background-image: url('../images/png/main_tree.png');
-                    height: #{'min(22.5rem,900px)'};
+                    height: #{'min(20rem,800px)'};
                     position: relative;
                     .image{
                         width: 40%;
@@ -181,25 +181,27 @@ html{
             }
             margin-top: #{'min(-8rem,-320px)'};
             .btmLeft{
-                width: 44%;
+                width: 50%;
                 .ovrGrid{
                     @include bgset;
+                    background-size: cover;
                     width: calc((100vw - 700px) / 2 + 100%);
                     min-width: calc((100vw - 90vw) / 2 + 100%);
                     margin-left: #{'min(calc((100vw - 700px) / -2),calc((100vw - 90vw) / -2))'};
-                    background-image: url('../images/png/bush.png');
-                    height: #{'min(18rem,720px)'};
+                    background-image: url('../images/png/ftr_bush.png');
+                    height: #{'min(10rem,400px)'};
                 }
             }
             .btmRight{
-                width: 44%;
+                width: 50%;
                 .ovrGrid{
                     transform: scaleX(-1);
                     width: calc((100vw - 700px) / 2 + 100%);
                     min-width: calc((100vw - 90vw) / 2 + 100%);
                     @include bgset;
-                    background-image: url('../images/png/bush.png');
-                    height: #{'min(18rem,720px)'};
+                    background-size: cover;
+                    background-image: url('../images/png/ftr_bush.png');
+                    height: #{'min(10rem,400px)'};
                 }
             }
         }
@@ -207,35 +209,78 @@ html{
 }
 
 .cntWrap{
-    &:nth-child(3){
-        margin-top: #{'min(-2rem,-80px)'};
-    }
-    margin-top: $h120;
     .content{
         @include grid;
         &.cnt01{
             header{
-                width: calc(100% / 8 * 2);
-                margin: 0 auto;
-                position: relative;
-                .image{
-                    position: relative;
-                    height: $h120;
-                    background-image: url('../images/png/leaf_type_G.png');
+                .hdrTop{
+                    @include flex;
+                    margin-top: -5px;
+                    .hdrLeft{
+                        width: 50%;
+                        .ovrGrid{
+                            @include bgset;
+                            background-size: cover;
+                            transform: scaleY(-1);
+                            width: calc((100vw - 700px) / 2 + 100%);
+                            min-width: calc((100vw - 90vw) / 2 + 100%);
+                            margin-left: #{'min(calc((100vw - 700px) / -2),calc((100vw - 90vw) / -2))'};
+                            background-image: url('../images/png/ftr_bush.png');
+                            height: #{'min(10rem,400px)'};
+                        }
+                    }
+                    .hdrRight{
+                        width: 50%;
+                        .ovrGrid{
+                            transform: scaleX(-1) scaleY(-1);
+                            width: calc((100vw - 700px) / 2 + 100%);
+                            min-width: calc((100vw - 90vw) / 2 + 100%);
+                            @include bgset;
+                            background-size: cover;
+                            background-image: url('../images/png/ftr_bush.png');
+                            height: #{'min(10rem,400px)'};
+                        }
+                    }
                 }
-                h2{
-                    top: #{'min(0.75rem,30px)'}; left: $h20;
-                    position: absolute;
-                    font-size: #{'min(5em,50px)'};
-                    text-transform: uppercase;
-                    background: rgba(255, 255, 255, 0.8);
-                    text-align: center;
-                    line-height: $h50;
-                    padding: 10px 10px 0 10px;
-                    font-weight: 700;
+                .hdrBtm{
+                    position: relative;
+                    height: $h200;
+                    margin-top: #{'min(-3rem,-120px)'};
+                    h2{
+                        position: absolute;
+                        bottom: #{'min(-0.5rem,-20px)'};
+                        font-size: #{'min(5em,50px)'};
+                        text-transform: uppercase;
+                        font-weight: 700;
+                    }
+                   .title{
+                        width: 30%;
+                        position: absolute;
+                        left: 0; right: 0; bottom: 0; margin: auto;
+                        .image{
+                            width: 100%;
+                            position: absolute;
+                            top: #{'min(-4rem,-160px)'}; left: 0; right: 0; margin: auto;
+                            height: $h160;
+                            background-image: url('../images/png/leaf_type_G.png');
+                        }
+                        h3{
+                            width: 80%;
+                            position: absolute;
+                            top: #{'min(-3rem,-120px)'}; left: 0; right: 0; margin: auto;
+                            font-size: #{'min(5em,50px)'};
+                            text-transform: uppercase;
+                            background: rgba(255, 255, 255, 0.8);
+                            text-align: center;
+                            line-height: $h50;
+                            padding: 10px 10px 0 10px;
+                            font-weight: 700;
+                        }
+                    }
                 }
             }
             section{
+                padding-bottom: $h40;
                 article{
                     width: 100%;
                     position: relative;
@@ -247,7 +292,7 @@ html{
                     }
                     .image{
                         position: relative;
-                        height: $h200;
+                        height: #{'min(6rem,240px)'};
                         background-image: url('../images/png/tree_type_A.png');
                     }
                     &:nth-child(1){
@@ -273,7 +318,7 @@ html{
                         }
                         position: absolute;
                         top: 0; left: 0; right: 0; bottom: 0; margin: auto;
-                        width: 60%;
+                        width: 80%;
                         margin: 0 auto;
                         opacity: 0;
                         h3{
@@ -281,7 +326,7 @@ html{
                             font-weight: 700;
                         }
                         p{
-                            font-size: #{'min(1.8em,18px)'};
+                            font-size: #{'min(2.4em,24px)'};
                         }
 
                     }
@@ -289,20 +334,31 @@ html{
             }
         }
         &.cnt02{
+            header{
+                padding-top: $h40;
+                h2{
+                    font-size: #{'min(6em,60px)'};
+                    font-weight: 700;
+                    text-transform: uppercase;
+                }
+            }
             section{
                 .artTop{
                     position: relative;
                     .rightImg{
+                        position: absolute;
+                        right: 0;
+                        bottom: $h20;
                         width: calc(100% / 8 * 2);
-                        margin-left: auto;
                         height: $h160;
                         @include bgset;
                         transform: scaleX(-1);
                         background-image: url('../images/png/leaf_type_H.png');
+                        transform: rotate(170deg);
                     }
                     .leftImg{
                         position: absolute;
-                        bottom: #{'min(-1rem,-40px)'};
+                        bottom: 0;
                         width: calc(100% / 8 * 2);
                         height: $h160;
                         @include bgset;
@@ -462,7 +518,16 @@ html{
             }
         }
         &.cnt03{
+            header{
+                padding-top: $h80;
+                h2{
+                    font-size: #{'min(6em,60px)'};
+                    text-transform: uppercase;
+                    font-weight: 700;
+                }
+            }
             section{
+                padding-top: $h40;
                 .artTop{
                     @include flex;
                     flex-wrap: wrap;

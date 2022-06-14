@@ -10,10 +10,10 @@ $(function(){
       if(brow.match('ios | Android | Symbian | Apple | Samsung | LG | Blackberry | iPhone | Gallaxy')){
           /*조건이 참이면 실행하게됨*/
           window.location.href = './tab_1024.html'
-        }
+      }
       else if(brow.match('iPad')){
           window.location.href = './tab_1024.html'
-        }
+  }
   
     // 새로고침 리로드
     $('html').animate({
@@ -29,6 +29,7 @@ $(function(){
         loc[i]=$('.wrap>div').eq(i).offset().top;
     }
     $(window).on('mousewheel',function(eve){
+        console.log(eve.originalEvent.wheelDelta);
         now= eve.originalEvent.wheelDelta;
         
         if(flag){
@@ -57,7 +58,7 @@ $(function(){
                 $('footer .icon').removeClass('btmov');
             }
         }
-    });
+    })
     
     // nav
     $('.navIcon').click(function(){
@@ -97,6 +98,7 @@ $(function(){
             function tt(tt){
                 t++;
                 num = ann[t-1]
+                console.log(num);
                 $('main h2>span').eq(t-1).css('opacity','1');
             };
 
