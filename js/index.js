@@ -203,8 +203,4 @@ $(function(){
         });
     });
 
-    $('.cntWrap .content.cnt03 section .artBtm .btm article .images').click(function(){
-        alert('준비중입니다!');
-    });
-
 });
