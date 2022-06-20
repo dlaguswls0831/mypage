@@ -378,6 +378,7 @@ html{
                         .hashtags{
                             position: relative;
                             @include flex;
+                            height: $h200;
                             .tag{
                                 position: absolute;
                                 width: calc(100% / 5);
@@ -425,12 +426,8 @@ html{
                             }
                         }
                         .profile{
-                            @include mob{
-                               padding-top: $h80;
-                            }
                             width: 50%;
                             margin: 0 auto;
-                            margin-top: $h200;
                             .bgImage{
                                 position: relative;
                                 @include bgset;
