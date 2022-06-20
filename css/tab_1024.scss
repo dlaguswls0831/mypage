@@ -426,11 +426,11 @@ html{
                         }
                         .profile{
                             @include mob{
-                               padding-top: $h40;
+                               padding-top: $h80;
                             }
                             width: 50%;
                             margin: 0 auto;
-                            margin-top: $h80;
+                            margin-top: $h120;
                             .bgImage{
                                 position: relative;
                                 @include bgset;
