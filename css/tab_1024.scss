@@ -428,6 +428,10 @@ html{
                         .profile{
                             width: 50%;
                             margin: 0 auto;
+                            margin-top: #{'min(-2rem,-80px)'};
+                            @include mob{
+                                margin-top: #{'min(-1.5rem,-60px)'};
+                            }
                             .bgImage{
                                 position: relative;
                                 @include bgset;
@@ -676,6 +680,7 @@ html{
                                     position: absolute;
                                     top: 0; left: 0; right: 0; bottom: 0; margin: auto;
                                     height: $h80;
+                                    font-weight: 700;
                                 }
                                 .image{
                                     &.i1{
