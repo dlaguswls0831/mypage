@@ -474,7 +474,7 @@ html{
                         &:nth-child(1){
                             margin-left: auto;
                             .texts{
-                                bottom: $h60;
+                                bottom: $h40;
                             }
                         }
                         &:nth-child(2){
@@ -482,11 +482,19 @@ html{
                         }
                         .texts{
                             width: 80%;
-                            font-size: #{'min(2.4em,24px)'};
+                            font-size: #{'min(2.8em,28px)'};
                             position: absolute;
-                            bottom: $h90; right: $h80;
+                            bottom: $h80; right: $h80;
                             opacity: 0;
-                            font-weight: 700;
+                            h3{
+                                font-size: #{'min(2.4em,24px)'};
+                                font-weight: 700;
+                            }
+                            p{
+                                width: 85%;
+                                margin: 0 auto;
+                                font-weight: 700;
+                            }
                         }
                     }
                 }
@@ -499,7 +507,7 @@ html{
                 padding-top: $h200;
                 @include flex;
                 .artLeft{
-                    width: 60%;
+                    width: 50%;
                     min-width: 600px;
                     article{
                         .hashtags{
@@ -519,7 +527,7 @@ html{
                                 }
                                 h3{
                                     position: absolute;
-                                    bottom: $h40; left: #{'min(1.25rem,50px)'};
+                                    bottom: #{'min(0.75rem,30px)'}; left: #{'min(1rem,40px)'};
                                     width: 50%;
                                     font-size: #{'min(3em,30px)'};
                                     background: rgba(255,255,255,0.8);
@@ -529,7 +537,7 @@ html{
                                     padding-top: 10px;
                                 }
                                 &.tagi1{
-                                    top: #{'min(4rem,160px)'}; left: #{'min(1.75rem,70px)'};
+                                    top: #{'min(4rem,160px)'}; left: 5%;
                                     transform: rotate(30deg);
                                 }
                                 &.tagi2{
@@ -558,11 +566,11 @@ html{
                                 position: relative;
                                 @include bgset;
                                 background-image: url('../images/png/profile_bgi.png');
-                                height: #{'min(10rem,400px)'};
+                                height: #{'min(12rem,480px)'};
                                 transform: rotate(330deg);
                                 .image{
                                     position: absolute;
-                                    top: $h120; left: $h20;
+                                    top: #{'min(4rem,160px)'}; left: $h20;
                                     width: 100%;
                                     height: $h200;
                                     transform: rotate(30deg);
@@ -578,24 +586,26 @@ html{
                             }
                         }
                         .btn{
-                            width: 15%;
-                            font-size: #{'min(3em,30px)'};
+                            width: 20%;
+                            font-size: #{'min(3.4em,34px)'};
                             font-weight: 700;
                             background-color: #fff;
-                            line-height: $h40;
+                            line-height: $h60;
                             text-align: center;
                             margin: 0 auto;
-                            margin-top: $h40;
+                            margin-top: $h20;
                             padding-top: 10px;
                         }
                     }
                 }
                 .artRight{
-                    width: 40%;
+                    width: 50%;
                     .artTop{
-                        width: 35%;
+                        width: 100%;
                         margin: 0 auto;
                         article{
+                            width: 40%;
+                            margin-left: auto;
                             h3{
                                 text-transform: uppercase;
                                 text-align: right;
@@ -606,7 +616,7 @@ html{
                             .images{
                                 min-width: 180px;
                                 position: relative;
-                                height: $h200;
+                                height: #{'min(4rem,160px)'};
                                 margin-top: $h40;
                                 @include bgset;
                                 background-image: url('../images/png/tree_type_C.png');
@@ -614,25 +624,25 @@ html{
                                     width: 100%;
                                     height: 100%;
                                     display: block;
-                                }
-                                .image{
-                                    position: absolute;
-                                    z-index: -1;
-                                    top: #{'min(-1.25rem,-50px)'}; right: #{'min(-1rem,-40px)'};
-                                    transform: rotate(200deg);
-                                    width: 30%;
-                                    height: $h120;
-                                    background-image: url('../images/png/leaf_type_B.png');
+                                    .image{
+                                        position: absolute;
+                                        z-index: -1;
+                                        top: #{'min(-1.25rem,-50px)'}; right: -2%;
+                                        transform: rotate(200deg);
+                                        width: 30%;
+                                        height: $h120;
+                                        background-image: url('../images/png/leaf_type_B.png');
+                                    }
                                 }
                            }
                         }
                     }
                     .artBtm{
                         position: relative;
-                        width: 80%;;
+                        width: 100%;;
                         min-width: 450px;
                         overflow: hidden;
-                        height: #{'min(6rem,240px)'};
+                        height: #{'min(9.5rem,380px)'};
                         @include bgset;
                         background-image: url('../images/png/tree_type_B.png');
                         h3{
@@ -646,16 +656,18 @@ html{
                         .artGroup{
                             width: 700%;
                             @include flex;
+                            margin-top: #{'min(1.25rem,50px)'};
                             article{
                                 @include flex;
                                 position: relative;
-                                width: calc(70% / 7);
+                                width: calc(80% / 7);
                                 margin-left: $h60;
-                                margin-top: $h20;
+                                height: #{'min(4.5rem,180px)'};
                                 background-color: rgba(255, 255, 255, 0.9);
                                 border-radius: 20px;
                                 padding: 10px;
                                 .image{
+                                    margin-top: $h40;
                                     width: 20%;
                                     height: $h80;
                                     background-image: url('../images/png/bam.png');
@@ -663,11 +675,11 @@ html{
                                 }
                                 .skillImg{
                                     position: absolute;
-                                    left: -8%;
+                                    left: -9%;
                                     @include bgset;
                                     width: 40%;
-                                    height: $h40;
-                                    margin-top: $h20;
+                                    height: #{'min(1.25rem,50px)'};
+                                    margin-top: $h60;
                                     @for $i from 1 through 7 {
                                         &.i#{$i}{
                                             background-image: url('../images/png/skill_img/skill_0#{$i}.png');
@@ -676,9 +688,10 @@ html{
                                 }
                                 p{
                                     width: 70%;
-                                    height: $h80;
+                                    height: 100%;
                                     overflow: hidden;
-                                    font-size: #{'min(2em,24px)'};
+                                    font-size: #{'min(2.4em,24px)'};
+                                    line-height: 30px;
                                     font-weight: 700;
                                 }
                             }
@@ -686,9 +699,9 @@ html{
                         .btn{
                             width: 10%;
                             position: absolute;
-                            right: 15px; top: #{'min(3.25rem,130px)'};
+                            right: 15px; top: $h200;
                             .image{
-                                height: $h40;
+                                height: $h80;
                                 background-image: url('../images/png/btn.png');
                                 cursor: pointer;
                             }

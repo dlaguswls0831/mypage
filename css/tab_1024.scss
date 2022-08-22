@@ -177,12 +177,16 @@ html{
             position: relative;
             @include flex;
             @include mob{
-                margin-top: #{'min(-6rem,-240px)'};
+                margin-top: #{'min(-5rem,-200px)'};
             }
             margin-top: #{'min(-8rem,-320px)'};
             .btmLeft{
                 width: 50%;
                 .ovrGrid{
+                    @include mob{
+                        background-image: url('../images/png/main_bush.png');
+                        height: #{'min(7rem,280px)'};
+                    }
                     @include bgset;
                     background-size: cover;
                     width: calc((100vw - 700px) / 2 + 100%);
@@ -195,6 +199,10 @@ html{
             .btmRight{
                 width: 50%;
                 .ovrGrid{
+                    @include mob{
+                        background-image: url('../images/png/main_bush.png');
+                        height: #{'min(7rem,280px)'};
+                    }
                     transform: scaleX(-1);
                     width: calc((100vw - 700px) / 2 + 100%);
                     min-width: calc((100vw - 90vw) / 2 + 100%);
@@ -215,10 +223,14 @@ html{
             header{
                 .hdrTop{
                     @include flex;
-                    margin-top: -5px;
+                    margin-top: -1px;
                     .hdrLeft{
                         width: 50%;
                         .ovrGrid{
+                            @include mob{
+                                background-image: url('../images/png/bush_left.png');
+                                height: #{'min(7rem,280px)'};
+                            }
                             @include bgset;
                             background-size: cover;
                             transform: scaleY(-1);
@@ -232,6 +244,10 @@ html{
                     .hdrRight{
                         width: 50%;
                         .ovrGrid{
+                            @include mob{
+                                background-image: url('../images/png/bush_left.png');
+                                height: #{'min(7rem,280px)'};
+                            }
                             transform: scaleX(-1) scaleY(-1);
                             width: calc((100vw - 700px) / 2 + 100%);
                             min-width: calc((100vw - 90vw) / 2 + 100%);
@@ -246,6 +262,9 @@ html{
                     position: relative;
                     height: $h200;
                     margin-top: #{'min(-3rem,-120px)'};
+                    @include mob{
+                        margin-top: #{'min(-1rem,-40px)'};
+                    }
                     h2{
                         position: absolute;
                         bottom: #{'min(-0.5rem,-20px)'};
